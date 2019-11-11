@@ -26,13 +26,14 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true })
+
 // {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 require("./models/User");
 
 
 // var index = require('./routes/sign-up');
-var sign_up = require('./routes/sign-up');
-var users = require('./routes/users');
+var sign_upRouter = require('./routes/sign-up');
+var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -49,8 +50,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', sign_up); //index
-app.use('/users', users);
+app.use('/', sign_upRouter); //index
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -69,5 +70,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

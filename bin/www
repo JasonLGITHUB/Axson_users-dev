@@ -4,7 +4,7 @@
  * Module dependencies.
  * 
  */
-require('dotenv').config()
+// require('dotenv').config()
 if (process.env.NODE_ENV !== 'production') {
    require('dotenv').config()
  }
@@ -16,8 +16,8 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+app.listen(process.env.PORT || 3000)
+// var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
