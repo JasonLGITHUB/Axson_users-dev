@@ -4,13 +4,13 @@
  * Module dependencies.
  * 
  */
-
-// if (process.env.NODE_ENV !== 'production') {
-//   require('dotenv').load()
-// }
+require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+   require('dotenv').config()
+ }
 
 var app = require('../app');
-var debug = require('debug')('nodejs-user-registration:server');
+var debug = require('debug')('Axson-user-registration:server');
 var http = require('http');
 
 /**
