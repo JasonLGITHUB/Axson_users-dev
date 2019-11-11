@@ -25,7 +25,8 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Axson-Users', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true })
+// {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 require("./models/User");
 
 
