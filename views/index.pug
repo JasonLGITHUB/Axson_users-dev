@@ -1,0 +1,126 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='/favicon.ico')
+
+    title Jumbotron Template for Bootstrap
+
+    link(
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha256-NJWeQ+bs82iAeoT5Ktmqbi3NXwxcHlfaVejzJI2dklU="
+      crossorigin="anonymous"
+    )
+    link(href='/jumbotron.css', rel='stylesheet')
+  body
+
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+      a.navbar-brand(href='/sign-up') Sign-Up
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='https://axson-jason-web-application.herokuapp.com/')
+              | About 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Security
+          li.nav-item
+            a.nav-link.disabled(href='#') Disabled
+          li.nav-item.dropdown
+            a#dropdown01.nav-link.dropdown-toggle(href='https://axson-jason-web-application.herokuapp.com/', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
+
+    main(role='main')
+
+      .jumbotron
+        .container
+          h1.display-3 Welcome to Partner Page 
+          p
+            ChecksDigit Members Account Program and Data Processing Solutions are easy to use and 
+            with the most advanced technology, are enough to handle the needs of your business.|
+             This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. 
+             Use it as a starting point to create something more unique.
+          p
+            a.btn.btn-primary.btn-lg(href='/sign-up', role='button') Sign Up Now
+      .container
+        .row
+          .col-md-4
+            h2 3 Ways to Make Money
+            p
+              | There are three ways in making money with us; One is to use our Solutions as members do. 
+              Two is to become a Partner.Three is as an Aggregator utilizing our secure payment portal.
+              Donec sends you an online payment form where you fill in your checking account number and routing number, 
+              as well as the amount of payment. 
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+          .col-md-4
+            h2 EZ Data Solutions
+            p
+              | Two is to become a Partner.Three is as an Aggregator utilizing our secure payment portal. Companies like Uber and Lyft offer a great opportunity to make some quick cash. You'll need a clean driving record, a fairly new car and the authorization to work wherever it is that you live. If you have all of those things, you can work when it's 
+              feasible for you, whether that's in the middle of the day during rush hour, or in the wee hours of the night on a weekend. The choice is yours.
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+              
+          .col-md-4
+            h2 Compliance
+            p
+              | Our Compliance System is divided into three action levels: Prevent, Detect, and Respond. Companies like Uber and Lyft offer a great opportunity to make 
+              some quick cash. You'll need a clean driving record, a fairly new car and the authorization to work wherever it is that you live. If you have all of those things, you can work when it's 
+              feasible for you, whether that's in the middle of the day during rush hour, or in the wee hours of the night on a weekend. The choice is yours.
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+        hr
+- var movieList = [{title: "Ocean's Eleven", cast: ["Julia Roberts", "George Clooney", "Brad Pitt", "Andy Garcia"], genres: ["Comedy", "Thriller"], posterImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/oceans11.jpg", imdbURL: "http://www.imdb.com/title/tt0240772/", rating: 9.2}, {title: "Pirates of the Caribbean", cast: ["Johnny Depp", "Keira Knightley", "Orlando Bloom"], genres: ["Adventure", "Comedy"], posterImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/piratesmovie.jpg", imdbURL: "http://www.imdb.com/title/tt0325980/", rating: 9.7}];
+
+mixin movie-card(movie)
+  div.movie-card
+    a(href=movie.imdbURL)
+      h2.movie-title= movie.title
+    img.movie-poster(src=movie.posterImage)
+    h3 Cast
+    ul.cast
+    each actor in movie.cast
+      li= actor
+    div.rating
+      if movie.rating > 5
+        img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/thumbsup.png")
+      else
+        img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/thumbsdown.png")
+    ul.genre
+      each genre in movie.genres
+        li= genre
+
+for movie in movieList
+  +movie-card(movie)
+
+
+
+  
+    footer.container
+      p © Company 2017
+
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"
+    )
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"
+      integrity="sha256-78rSZBnBJXmJ5VGuWL8mkunvhy94g99Rw53bssjHSUk="
+      crossorigin="anonymous"
+    )
+
+    
