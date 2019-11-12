@@ -2,7 +2,7 @@
   "name": "Axson-user-registration",
   "version": "0.0.0",
   "license": "ISC",
-    "author": "",
+  "author": "",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -19,22 +19,28 @@
     "express-validator": "^5.0.1",
     "handlebars": "^4.5.1",
     "hbs": "^4.0.6",
-    "mongodb": "^3.3.3",
+    "mongodb": "^3.3.4",
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
     "partials": "^0.1.0",
     "path": "^0.12.7",
     "pug": "^2.0.4",
-    "serve-favicon": "~2.4.5"    
+    "serve-favicon": "~2.4.5"
   },
- 
   "main": "app.js",
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^1.19.4"
-  }
-
-  
-  
+  },
+  "description": "Programmer Blog: http://programmerblog.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonLGITHUB/Axson_users-dev.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JasonLGITHUB/Axson_users-dev/issues"
+  },
+  "homepage": "https://github.com/JasonLGITHUB/Axson_users-dev#readme"
 }
