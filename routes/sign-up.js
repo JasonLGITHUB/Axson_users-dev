@@ -9,7 +9,7 @@ const { matchedData, sanitize }   = require('express-validator/filter');
    /* GET home page. */
 
    router.get('/', function(req, res, next) {
-       res.render('index', { title: 'Axson user registration'});
+       res.render('sign-up', { title: 'Axson user registration'});
     })
   
   router.get('/sign-up', function(req, res, next) {
