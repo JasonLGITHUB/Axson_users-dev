@@ -13,26 +13,13 @@ var session = require('express-session');
 var flash = require('connect-flash');
 
 //-----------------------------------------------------------
-// var uri = "mongodb+srv://user:YORMgOxqJdMm7kBc@cluster0-qesxj.mongodb.net/test?retryWrites=true&w=majorityretryWrites=true";
-
-
-// mongoose.connect(uri, {useNewUrlParser: true});
-// var db = mongoose.connection;
 
 //-----------------------------------------------------------
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-//mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true })
-
-var uri = "mongodb+srv://user:YORMgOxqJdMm7kBc@cluster0-qesxj.mongodb.net/test?retryWrites=true&w=majorityretryWrites=true";
-mongoose.connect(uri, {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true });
-var db = mongoose.connection;
-
-// {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true })
 require("./models/User");
-
-
 // var index = require('./routes/sign-up');
 var sign_upRouter = require('./routes/sign-up');
 var usersRouter = require('./routes/users');
